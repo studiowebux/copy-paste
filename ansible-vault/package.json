@@ -1,0 +1,39 @@
+{
+  "name": "@yetanothertool/vault",
+  "version": "1.0.0",
+  "description": "NodeJS tool to create and generate ansible vaults using templates.",
+  "main": "service/index.js",
+  "keywords": [
+    "ansible",
+    "vault",
+    "generator",
+    "template"
+  ],
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yet-another-tool/copy-paste.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yet-another-tool/copy-paste/issues"
+  },
+  "homepage": "https://github.com/yet-another-tool/copy-paste#readme",
+  "bin": {
+    "yat-vault": "service/index.js"
+  },
+  "author": "Studio Webux S.E.N.C",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "js-yaml": "^4.1.0"
+  }
+}

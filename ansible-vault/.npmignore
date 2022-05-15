@@ -1,0 +1,6 @@
+tests/
+.prettierrc
+.eslintrc.js
+*.tgz
+*.yml
+*.yaml

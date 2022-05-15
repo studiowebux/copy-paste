@@ -1,0 +1,30 @@
+[
+  {
+    "id": "databaseUrl",
+    "name": "/{{ tenant }}/{{ project_name }}/{{ stage }}/database_url",
+    "description": "The database URL",
+    "string_type": "SecureString",
+    "overwrite_value": "changed",
+    "tier": "Standard",
+    "decryption": "yes"
+  },
+  {
+    "id": "sentryDsn",
+    "name": "/{{ tenant }}/{{ project_name }}/{{ stage }}/sentry_dsn",
+    "description": "The Sentry Access dsn",
+    "string_type": "String",
+    "overwrite_value": "changed",
+    "tier": "Standard",
+    "decryption": "no"
+  },
+  {
+    "id": "debugFlag",
+    "name": "/{{ tenant }}/{{ project_name }}/{{ stage }}/debug",
+    "description": "A flag to enable the debug mode",
+    "string_type": "String",
+    "overwrite_value": "never",
+    "tier": "Standard",
+    "decryption": "no",
+    "choices": ["true", "false"]
+  }
+]
