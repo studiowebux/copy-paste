@@ -1,6 +1,7 @@
 {
   "name": "@yetanothertool/vault",
   "version": "1.0.0",
+  "private": false,
   "description": "NodeJS tool to create and generate ansible vaults using templates.",
   "main": "service/index.js",
   "keywords": [
