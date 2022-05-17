@@ -40,10 +40,31 @@
 
 ## About
 
+<div>
+<b> | </b>
+<a href="https://www.buymeacoffee.com/studiowebux" target="_blank"
+      ><img
+        src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+        alt="Buy Me A Coffee"
+        style="height: 30px !important; width: 105px !important"
+/></a>
+<b> | </b>
+<a href="https://webuxlab.com" target="_blank"
+      ><img
+        src="https://webuxlab-static.s3.ca-central-1.amazonaws.com/logoAmpoule.svg"
+        alt="Webux Logo"
+        style="height: 30px !important"
+/> Webux Lab</a>
+<b> | </b>
+</div>
+
+---
+
 Collection of tools and scripts to configure, provision, create and more.
 
-- [Ansible Vault Templates](ansible-vault/)
-  - `yat-vault {create|generate}`
+- [Ansible Vault Templates](ansible-vault/) - <a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
+
+  - `yat-vault {create|generate|generate-string}`
 
 ## Contributing
 

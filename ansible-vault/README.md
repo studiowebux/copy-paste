@@ -38,6 +38,10 @@
 
 ---
 
+<a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
+
+---
+
 ## About
 
 Simple YAML Generator using local saved JSON template to facilitate and speed up the creation of new vaults within a project.
