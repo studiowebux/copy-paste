@@ -2,7 +2,7 @@
 
 ![Project Logo](https://webuxlab-static.s3.ca-central-1.amazonaws.com/logoAmpoule.svg)
 
-<h2>Copy .. Paste ..</h2>
+<h2>Templates</h2>
 
 <p align="center">
   <a href="https://github.com/yet-another-tool/copy-paste/issues">Report Bug</a>
@@ -22,17 +22,11 @@
         <li><a href="#technologies">Technologies</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#sources">Sources</a></li>
   </ol>
 </details>
 
@@ -40,42 +34,26 @@
 
 ## About
 
-<div>
-<b> | </b>
-<a href="https://www.buymeacoffee.com/studiowebux" target="_blank"
-      ><img
-        src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-        alt="Buy Me A Coffee"
-        style="height: 30px !important; width: 105px !important"
-/></a>
-<b> | </b>
-<a href="https://webuxlab.com" target="_blank"
-      ><img
-        src="https://webuxlab-static.s3.ca-central-1.amazonaws.com/logoAmpoule.svg"
-        alt="Webux Logo"
-        style="height: 30px !important"
-/> Webux Lab</a>
-<b> | </b>
-</div>
+A bunch of scripts to create projects, services, lambdas and readmes.
+
+### Technologies
+
+This section covers the tools and packages used for the project,
+
+- bash
+
+## Usage
+
+Create the aliases : `./alias.sh`
+
+Then in the chosen folder, run the appropriate command to create the wanted resource.
+
+- `create-service`
+- `create-lambda`
+- `create-project`
+
 
 ---
-
-Collection of tools and scripts to configure, provision, create and more.
-
-- [Ansible Vault Templates](ansible-vault/) - <a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
-  - `yat-vault {create|generate|generate-string}`
-- [AWS Scripts](scripts/aws)
-  - `mfa`
-  - `assume-role`
-- [Git Scripts](scripts/git)
-  - `tagger`
-  - `deployment`
-- [Templates](templates/)
-  - `project`
-  - `readme`
-  - `lambda`
-  - `service`
-
 
 ## Contributing
 

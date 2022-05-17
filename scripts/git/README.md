@@ -34,7 +34,7 @@
 
 ## About
 
-A bunch of script to facilitate git actions within pipelines.
+A bunch of scripts to facilitate git actions within pipelines.
 
 ### Technologies
 
