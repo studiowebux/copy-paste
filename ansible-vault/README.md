@@ -89,7 +89,7 @@ This command let you attach a `.json` template to an alias.
 yat-vault create
 ```
 
-![Create Template](./docs/example-create.png)
+![Create Template](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-create.png)
 
 ### Generate vault from template
 
@@ -101,7 +101,7 @@ The data is generated unecrypted, it is up to you to encrypt the whole file.
 yat-vault generate
 ```
 
-![Ansible Vault File](./docs/example-generated-vault-file.png)
+![Ansible Vault File](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-generated-vault-file.png)
 
 #### To encrypt the value as string
 
@@ -111,7 +111,7 @@ It uses the `ansible-vault` npm package to encrypt each values.
 yat-vault generate-string
 ```
 
-![Ansible Vault String](./docs/example-generated-vault-string.png)
+![Ansible Vault String](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-generated-vault-string.png)
 
 ---
 
