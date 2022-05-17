@@ -1,13 +1,16 @@
+#!/bin/bash
+
+cat <<'EOF' > README.md
 <div align="center">
 
-![Project Logo](https://webuxlab-static.s3.ca-central-1.amazonaws.com/logoAmpoule.svg)
+![Webux Logo](https://webuxlab-static.s3.ca-central-1.amazonaws.com/logoAmpoule.svg)
 
-<h2>Copy .. Paste ..</h2>
+<h2>Project Name</h2>
 
 <p align="center">
-  <a href="https://github.com/yet-another-tool/copy-paste/issues">Report Bug</a>
+  <a href="https://github.com/ORGANIZATION/PROJECT_NAME/issues">Report Bug</a>
   ·
-  <a href="https://github.com/yet-another-tool/copy-paste/issues">Request Feature</a>
+  <a href="https://github.com/ORGANIZATION/PROJECT_NAME/issues">Request Feature</a>
 </p>
 </div>
 
@@ -38,8 +41,6 @@
 
 ---
 
-## About
-
 <div>
 <b> | </b>
 <a href="https://www.buymeacoffee.com/studiowebux" target="_blank"
@@ -60,22 +61,31 @@
 
 ---
 
-Collection of tools and scripts to configure, provision, create and more.
+## About
 
-- [Ansible Vault Templates](ansible-vault/) - <a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
-  - `yat-vault {create|generate|generate-string}`
-- [AWS Scripts](scripts/aws)
-  - `mfa`
-  - `assume-role`
-- [Git Scripts](scripts/git)
-  - `tagger`
-  - `deployment`
-- [Templates](templates/)
-  - `project`
-  - `readme`
-  - `lambda`
-  - `service`
+...
 
+### Technologies
+
+This section covers the tools and packages used for the project,
+
+- ...
+
+## Getting Started
+
+Steps to get the project running locally
+
+### Prerequisites
+
+- ...
+
+### Installation
+
+...
+
+## Usage
+
+...
 
 ## Contributing
 
@@ -141,4 +151,5 @@ Distributed under the MIT License. See LICENSE for more information.
 
 ## Contact
 
-- Tommy Gingras @ tommy@studiowebux.com
+- Your Name @ your@email.com
+EOF
