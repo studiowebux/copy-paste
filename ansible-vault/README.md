@@ -40,7 +40,7 @@
 
 ## About
 
-Simple YAML Generator using local saved JSON template to facilitate and speed up the create of new vaults within a project.
+Simple YAML Generator using local saved JSON template to facilitate and speed up the creation of new vaults within a project.
 
 **Documentation is currently WIP**
 
@@ -53,6 +53,8 @@ This section covers the tools and packages used for the project,
   - For interactive shell
 - `js-yaml`
   - To convert the generated JSON to YAML
+- `ansible-vault`
+  - To encrypt the strings
 
 ## Getting Started
 
@@ -70,21 +72,44 @@ npm install -g @yetanothertool/vault
 
 ### The template
 
-You can look at `tests/vault.json` for an example.
+You can look at `tests/vault.json` for a template example.
+and the `tests/decrypt.yml` contains an example to unvault the values when using the string approach.
 
 Documentation regarding the YAML Format generated: https://docs.ansible.com/ansible/latest/collections/community/aws/aws_ssm_parameter_store_module.html
 
 ### Create new template
 
+This command let you attach a `.json` template to an alias.
+
 ```bash
 yat-vault create
 ```
 
+![Create Template](./docs/example-create.png)
+
 ### Generate vault from template
+
+#### To prepare the whole file 
+
+The data is generated unecrypted, it is up to you to encrypt the whole file.
 
 ```bash
 yat-vault generate
 ```
+
+![Ansible Vault File](./docs/example-generated-vault-file.png)
+
+#### To encrypt the value as string
+
+It uses the `ansible-vault` npm package to encrypt each values.
+
+```bash
+yat-vault generate-string
+```
+
+![Ansible Vault String](./docs/example-generated-vault-string.png)
+
+---
 
 ## Contributing
 

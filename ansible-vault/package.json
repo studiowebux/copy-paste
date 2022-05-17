@@ -10,7 +10,6 @@
     "generator",
     "template"
   ],
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yet-another-tool/copy-paste.git"
@@ -34,6 +33,7 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
+    "ansible-vault": "^1.1.0",
     "inquirer": "^8.2.4",
     "js-yaml": "^4.1.0"
   }

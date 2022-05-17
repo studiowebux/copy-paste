@@ -22,3 +22,4 @@ jspm_packages
 *.yaml
 *.yml
 .yat_config
+!decrypt.yml
