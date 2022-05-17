@@ -4,3 +4,4 @@ tests/
 *.tgz
 *.yml
 *.yaml
+docs/
