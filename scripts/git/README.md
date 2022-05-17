@@ -2,7 +2,7 @@
 
 ![Project Logo](https://webuxlab-static.s3.ca-central-1.amazonaws.com/logoAmpoule.svg)
 
-<h2>Vault Generator</h2>
+<h2>Git Scripts</h2>
 
 <p align="center">
   <a href="https://github.com/yet-another-tool/copy-paste/issues">Report Bug</a>
@@ -22,94 +22,33 @@
         <li><a href="#technologies">Technologies</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#sources">Sources</a></li>
   </ol>
 </details>
 
 ---
 
-<a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
-
----
-
 ## About
 
-Simple YAML Generator using local saved JSON template to facilitate and speed up the creation of new vaults within a project.
+A bunch of script to facilitate git actions within pipelines.
 
 ### Technologies
 
 This section covers the tools and packages used for the project,
 
-- NodeJS
-- `inquirer`
-  - For interactive shell
-- `js-yaml`
-  - To convert the generated JSON to YAML
-- `ansible-vault`
-  - To encrypt the strings
-
-## Getting Started
-
-### Prerequisites
-
-- NodeJS
-
-### Installation
-
-```bash
-npm install -g @yetanothertool/vault
-```
+- bash
+- git
+- curl
+- github tags
+- github deployment
 
 ## Usage
 
-### The template
-
-You can look at `tests/vault.json` for a template example.
-and the `tests/decrypt.yml` contains an example to unvault the values when using the string approach.
-
-Documentation regarding the YAML Format generated: https://docs.ansible.com/ansible/latest/collections/community/aws/aws_ssm_parameter_store_module.html
-
-### Create new template
-
-This command let you attach a `.json` template to an alias.
-
-```bash
-yat-vault create
-```
-
-![Create Template](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-create.png)
-
-### Generate vault from template
-
-#### To prepare the whole file 
-
-The data is generated unecrypted, it is up to you to encrypt the whole file.
-
-```bash
-yat-vault generate
-```
-
-![Ansible Vault File](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-generated-vault-file.png)
-
-#### To encrypt the value as string
-
-It uses the `ansible-vault` npm package to encrypt each values.
-
-```bash
-yat-vault generate-string
-```
-
-![Ansible Vault String](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-generated-vault-string.png)
+Look into the `tests/test.sh` to have a better idea about how to use these scripts.
 
 ---
 
@@ -178,3 +117,14 @@ Distributed under the MIT License. See LICENSE for more information.
 ## Contact
 
 - Tommy Gingras @ tommy@studiowebux.com
+
+## Sources
+
+- https://github.com/alessandrobologna/aws-codebuild-git/blob/master/git-tagger
+- https://github.com/aws-samples/eks-workshop/blob/main/buildspec.yml.disabled
+- https://stackoverflow.com/a/42449998
+- https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/
+- https://stackoverflow.com/a/28280404
+- https://unix.stackexchange.com/questions/69314/automated-ssh-keygen-without-passphrase-how
+- https://docs.github.com/en/rest/reference/deployments
+
