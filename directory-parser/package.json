@@ -1,0 +1,24 @@
+{
+  "name": "@yetanothertool/directory-scanner",
+  "version": "1.0.0",
+  "private": false,
+  "description": "NodeJS tool to scan the current directory and generate a json file with the structure",
+  "main": "index.js",
+  "keywords": [
+    "directory",
+    "scanner"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yet-another-tool/copy-paste.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yet-another-tool/copy-paste/issues"
+  },
+  "homepage": "https://github.com/yet-another-tool/copy-paste#readme",
+  "bin": {
+    "yat-dir-scanner": "index.js"
+  },
+  "author": "Studio Webux S.E.N.C",
+  "license": "MIT"
+}
