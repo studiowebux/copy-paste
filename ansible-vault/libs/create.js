@@ -172,8 +172,13 @@ async function createNewVaultString(templateToUse) {
   const result = questions
     .filter((qq) => qq.name !== 'yat_vault_string_password')
     .map((q) => {
-      // eslint-disable-next-line no-param-reassign
-      q.value = encryptString(answers[q.id], password);
+      if (q.string_type === 'SecureString') {
+        // eslint-disable-next-line no-param-reassign
+        q.value = encryptString(answers[q.id], password);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        q.value = answers[q.id];
+      }
       // eslint-disable-next-line no-param-reassign
       delete q.id;
       // eslint-disable-next-line no-param-reassign
