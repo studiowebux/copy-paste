@@ -56,6 +56,7 @@ Collection of tools and scripts to configure, provision, create and more.
 - [AWS Scripts](scripts/aws)
   - `mfa`
   - `assume-role`
+  - `./organizationAccountAccessRole {ACCOUNT_ID} {AWS_PROFILE}`
 - [Git Scripts](scripts/git)
   - `tagger`
   - `deployment`
@@ -64,6 +65,8 @@ Collection of tools and scripts to configure, provision, create and more.
   - `readme`
   - `lambda`
   - `service`
+- [Utils](utils/)
+  - `org-formation-mermaidjs`
 
 
 ## Contributing

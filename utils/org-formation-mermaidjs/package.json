@@ -1,0 +1,16 @@
+{
+  "name": "@yetanothertool/org-formation-mermaidjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "org-formation",
+    "mermaidjs"
+  ],
+  "author": "Studio Webux S.E.N.C",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "js-yaml-cloudformation-schema": "^1.0.0"
+  }
+}
