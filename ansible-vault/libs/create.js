@@ -5,7 +5,11 @@ const { prompt } = require('inquirer');
 const path = require('path');
 const jsYaml = require('js-yaml');
 
-const { saveConfiguration, readConfiguration } = require('./configuration');
+const {
+  saveConfiguration,
+  readConfiguration,
+  getType,
+} = require('./configuration');
 const { normalizePath, searchRoot } = require('./utils');
 const { encryptString } = require('./encrypt');
 
@@ -99,7 +103,11 @@ async function createNewVault(templateToUse) {
       name: q.id,
       message: q.message || q.description,
       choices: q.choices || null,
-      type: q.choices ? 'list' : 'input',
+      type: getType({
+        choices: q.choices,
+        type: q.type,
+        stringType: q.string_type,
+      }),
     })),
   ]);
 
@@ -158,7 +166,11 @@ async function createNewVaultString(templateToUse) {
       name: q.id,
       message: q.message || q.description,
       choices: q.choices || null,
-      type: q.choices ? 'list' : 'input',
+      type: getType({
+        choices: q.choices,
+        type: q.type,
+        stringType: q.string_type,
+      }),
     })),
     {
       type: 'password',
@@ -175,6 +187,9 @@ async function createNewVaultString(templateToUse) {
       if (q.string_type === 'SecureString') {
         // eslint-disable-next-line no-param-reassign
         q.value = encryptString(answers[q.id], password);
+      } else if (q.string_type === 'StringList') {
+        // eslint-disable-next-line no-param-reassign
+        q.value = answers[q.id].join(',');
       } else {
         // eslint-disable-next-line no-param-reassign
         q.value = answers[q.id];

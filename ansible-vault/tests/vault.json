@@ -26,5 +26,26 @@
     "tier": "Standard",
     "decryption": "no",
     "choices": ["true", "false"]
+  },
+  {
+    "id": "privateKey",
+    "name": "/{{ tenant }}/{{ project_name }}/{{ stage }}/private_key",
+    "description": "Multi-line input",
+    "string_type": "SecureString",
+    "overwrite_value": "changed",
+    "tier": "Standard",
+    "decryption": "yes",
+    "type": "editor"
+  },
+  {
+    "id": "foodList",
+    "name": "/{{ tenant }}/{{ project_name }}/{{ stage }}/foodList",
+    "description": "Some random list and multiple selections",
+    "string_type": "StringList",
+    "overwrite_value": "changed",
+    "tier": "Standard",
+    "decryption": "no",
+    "type": "checkbox",
+    "choices":["Potatoes", "Tomatoes", "Bacon"]
   }
 ]

@@ -23,3 +23,5 @@ jspm_packages
 *.yml
 .yat_config
 !decrypt.yml
+
+!tests/encrypted.yml

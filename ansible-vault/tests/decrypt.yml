@@ -11,13 +11,13 @@
         stage: 'cc'
 
     - include_vars:
-        file: ../vault.yml
+        file: ./encrypted.yml
         name: vault
 
     # GET VAULT PASSWORD FROM SECURED EXTERNAL PROVIDED, Secrets Manager, SSM Secure , etc.
 
     - debug:
-        msg: "item.name === {{ item.value|unvault('12345') }}"
+        msg: "{{ item.name }} === {{ item.value|unvault('12345') }}"
       with_items: '{{ vault.parameters }}'
 #
 # ansible-playbook -i localhost, tests/decrypt.yml
