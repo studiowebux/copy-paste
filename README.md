@@ -60,6 +60,8 @@ Collection of tools and scripts to configure, provision, create and more.
 - [Git Scripts](scripts/git)
   - `tagger`
   - `deployment`
+- [Godaddy Scripts](scripts/godaddy)
+  - `update-ns`
 - [Templates](templates/)
   - `project`
   - `readme`
