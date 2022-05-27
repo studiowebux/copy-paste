@@ -1,0 +1,50 @@
+parameters:
+  - name: /{{ tenant }}/{{ project_name }}/{{ stage }}/database_url
+    description: The database URL
+    string_type: SecureString
+    overwrite_value: changed
+    tier: Standard
+    decryption: 'yes'
+    value: |-
+      $ANSIBLE_VAULT;1.1;AES256
+      36633162646534353632363663663531336630313964383138376234343165393330386534363538
+      6531333235616331316461666536323364613433303561330a313936373265646633646637313636
+      36323262353836396562633663376530633561633062313262383736313266333439373061343464
+      3139373330363437660a396537623633373965336164303165366661313333313530666565393364
+      65353362613431373331346236313866363561376261353564383562636131663762
+  - name: /{{ tenant }}/{{ project_name }}/{{ stage }}/sentry_dsn
+    description: The Sentry Access dsn
+    string_type: String
+    overwrite_value: changed
+    tier: Standard
+    decryption: 'no'
+    value: https://127.0.0.1
+  - name: /{{ tenant }}/{{ project_name }}/{{ stage }}/debug
+    description: A flag to enable the debug mode
+    string_type: String
+    overwrite_value: never
+    tier: Standard
+    decryption: 'no'
+    value: 'true'
+  - name: /{{ tenant }}/{{ project_name }}/{{ stage }}/private_key
+    description: Multi-line input
+    string_type: SecureString
+    overwrite_value: changed
+    tier: Standard
+    decryption: 'yes'
+    type: editor
+    value: |-
+      $ANSIBLE_VAULT;1.1;AES256
+      36373663656538663931666131636265626334626131343662656232653937613833373234626362
+      3032656261633935323063313062353333616339386132620a326335306465626663383162346232
+      32633663313066353931623334306365643831346230656431306134656661303430313137633130
+      3833373531633637370a346562393132393536383132636135393136386566643462363731356136
+      34656536633639313137336639393038323266326431373836383366616637356332
+  - name: /{{ tenant }}/{{ project_name }}/{{ stage }}/foodList
+    description: Some random list and multiple selections
+    string_type: StringList
+    overwrite_value: changed
+    tier: Standard
+    decryption: 'no'
+    type: checkbox
+    value: Potatoes,Tomatoes

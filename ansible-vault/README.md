@@ -79,6 +79,15 @@ and the `tests/decrypt.yml` contains an example to unvault the values when using
 
 Documentation regarding the YAML Format generated: https://docs.ansible.com/ansible/latest/collections/community/aws/aws_ssm_parameter_store_module.html
 
+**For Version > 1.3.0**:
+- Added new option for the templates (`type`)
+- Support new types with inquirer
+  - input
+  - editor
+  - list
+  - checkbox
+  - password
+
 ### Create new template
 
 This command let you attach a `.json` template to an alias.
@@ -110,6 +119,13 @@ yat-vault generate-string
 ```
 
 ![Ansible Vault String](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-generated-vault-string.png)
+![Ansible Vault String v1.3.0](https://github.com/yet-another-tool/copy-paste/raw/main/ansible-vault/docs/example-generate-vault-string.png)
+
+#### Passing the vault password with environment variable
+
+```bash
+export VAULT_PASS="12345"
+```
 
 ---
 

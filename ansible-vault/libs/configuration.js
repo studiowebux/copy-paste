@@ -79,8 +79,37 @@ async function selectConfiguration() {
   return templateToStartFrom.Template;
 }
 
+function getType({ choices, type, stringType }) {
+  if (!type && choices && choices.length > 0) {
+    // Default behaviour when choices are defined
+    return 'list';
+  }
+
+  if (!type && stringType && stringType === 'SecureString') {
+    // This is the default behaviour for SecureString, but if the user has provided a type we use the type as well.
+    // Useful to use the editor for multi-line secrets such as private keys
+    return 'password';
+  }
+
+  switch (type) {
+    case 'input':
+      return 'input';
+    case 'list':
+      return 'list';
+    case 'checkbox':
+      return 'checkbox';
+    case 'password':
+      return 'password';
+    case 'editor':
+      return 'editor';
+    default:
+      return 'input';
+  }
+}
+
 module.exports = {
   saveConfiguration,
   readConfiguration,
   selectConfiguration,
+  getType,
 };
