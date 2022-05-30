@@ -1,0 +1,14 @@
+[
+  {
+    "username": "foo",
+    "groups": ["developers"]
+  },
+  {
+    "username": "provisioning",
+    "groups": ["devops", "security"]
+  },
+  {
+    "username": "tgingras",
+    "groups": ["devops", "security", "dev", "Admin"]
+  }
+]
