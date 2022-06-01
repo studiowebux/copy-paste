@@ -38,7 +38,7 @@
 
 ---
 
-<a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
+<a href="https://badge.fury.io/js/@yetanothertool%2Fsiamm"><img src="https://badge.fury.io/js/@yetanothertool%2Fsiamm.svg" alt="npm version" height="18"></a>
 
 ---
 
