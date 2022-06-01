@@ -1,12 +1,24 @@
 {
   "name": "@yetanothertool/org-formation-mermaidjs",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Generate mermaid using organization.yml with org-formation",
   "main": "index.js",
   "keywords": [
     "org-formation",
     "mermaidjs"
   ],
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yet-another-tool/copy-paste.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yet-another-tool/copy-paste/issues"
+  },
+  "homepage": "https://github.com/yet-another-tool/copy-paste#readme",
+  "bin": {
+    "yat-org-formation-mermaidjs": "index.js"
+  },
   "author": "Studio Webux S.E.N.C",
   "license": "MIT",
   "dependencies": {
