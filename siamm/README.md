@@ -57,6 +57,7 @@ This section covers the tools and packages used for the project,
 ### Prerequisites
 
 - NodeJS
+- AWS
 
 ### Installation
 
@@ -70,24 +71,39 @@ npm install -g @yetanothertool/siamm
 
 ```json
 [
-    {
-        "username": "foo",
-        "groups": [
-            "bar"
-        ]
-    }
+
+  {
+    "username": "provisioning",
+    "policies": [
+      "devops-role-assume",
+      "security-role-assume",
+      "support-role-assume"
+    ]
+  },
+  {
+    "username": "tgingras",
+    "policies": [
+      "devops-role-assume",
+      "security-role-assume",
+      "support-role-assume"
+    ],
+    "groups": ["administrators"]
+  }
 ]
+
 ```
 
 ### CLI
 
-yat-siaam -t ./users.json -d
+`yat-siaam --template ./users.json --accountId=123456789012 --update --create --cleanup`
 
-| Option | Description                                        |
-| ------ | -------------------------------------------------- |
-| -t     | JSON file with the user definition                 |
-| -d     | Delete IAM users that aren't present in the source |
-
+| Option      | Description                                     |
+| ----------- | ----------------------------------------------- |
+| --template  | JSON file with the user definition              |
+| --accountId | Target AWS Account thst has IAM Users           |
+| --update    | Update Managed Policies, groups and users       |
+| --create    | Create missing users                            |
+| --cleanup   | Delete users that aren't in the local JSON file |
 
 ---
 

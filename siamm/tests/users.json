@@ -1,14 +1,20 @@
 [
-  {
-    "username": "foo",
-    "groups": ["developers"]
-  },
+
   {
     "username": "provisioning",
-    "groups": ["devops", "security"]
+    "policies": [
+      "sw-devops-role-assume-role-policy",
+      "sw-security-role-assume-role-policy",
+      "sw-support-role-assume-role-policy"
+    ]
   },
   {
     "username": "tgingras",
-    "groups": ["devops", "security", "dev", "Admin"]
+    "policies": [
+      "sw-devops-role-assume-role-policy",
+      "sw-security-role-assume-role-policy",
+      "sw-support-role-assume-role-policy"
+    ],
+    "groups": ["administrators"]
   }
 ]
