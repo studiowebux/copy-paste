@@ -73,10 +73,9 @@ function nestedAccounts(ou) {
     ou.forEach((o) => {
       if (o.accounts && o.accounts.length > 0) {
         o.accounts.forEach((account) => {
-          console.log(account);
           mermaid += `${sanitize(o.id)} --> ${sanitize(account.id)}(${
             account.description || account.name
-          } - ${sanitize(account.accountId)}):::account\n`;
+          } - ${sanitize(account.accountId || "Not Provided")}):::account\n`;
         });
       }
       mermaid += nestedAccounts(o.OU);
