@@ -46,6 +46,7 @@ generatedAccounts.add(
   createAccount({
     id: sanitize(ManagementAccount[0][0]),
     name: sanitize(ManagementAccount[0][1].Properties.AccountId),
+    accountId: sanitize(ManagementAccount[0][1].Properties.AccountId),
     description: ManagementAccount[0][1].Properties.AccountName,
   })
 );
@@ -53,6 +54,7 @@ Accounts.forEach((account) => {
   const obj = createAccount({
     id: sanitize(account[0]),
     name: account[1].Properties.AccountName,
+    accountId: account[1].Properties.AccountId,
     description: account[1].Properties.Alias,
   });
   generatedAccounts.add(obj);

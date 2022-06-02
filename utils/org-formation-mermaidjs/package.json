@@ -1,6 +1,6 @@
 {
   "name": "@yetanothertool/org-formation-mermaidjs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Generate mermaid using organization.yml with org-formation",
   "main": "index.js",
   "keywords": [
