@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 /* Studio Webux S.E.N.C 2022 */
+const argv = require('minimist')(process.argv.slice(2));
 
 const { selectConfiguration } = require('../libs/configuration');
 const {
@@ -11,17 +12,21 @@ const {
 
 (async () => {
   try {
-    const action = process.argv.splice(2)[0];
-
-    switch (action) {
+    switch (argv._[0]) {
       case 'create':
         await createNewConfiguration();
         break;
       case 'generate':
-        await createNewVault(await selectConfiguration());
+        await createNewVault(
+          argv.template || (await selectConfiguration()),
+          argv.output,
+        );
         break;
       case 'generate-string':
-        await createNewVaultString(await selectConfiguration());
+        await createNewVaultString(
+          argv.template || (await selectConfiguration()),
+          argv.output,
+        );
         break;
       default:
         throw new Error('No action provided.');

@@ -67,7 +67,7 @@ async function createNewConfiguration() {
   }
 }
 
-async function createNewVault(templateToUse) {
+async function createNewVault(templateToUse, output = null) {
   const template = JSON.parse(readConfiguration()).filter(
     (c) => c.ServiceName === templateToUse,
   );
@@ -91,6 +91,7 @@ async function createNewVault(templateToUse) {
       name: 'targetFilePath',
       message: 'Location to save the vault',
       default: path.join(process.cwd(), 'vault.yml'),
+      when: !output,
 
       validate: (input) => {
         if (path.extname(input) === '.yml' || path.extname(input) === '.yaml') {
@@ -125,12 +126,12 @@ async function createNewVault(templateToUse) {
 
   const yaml = jsYaml.dump({ parameters: result }, { lineWidth: Infinity });
 
-  writeFileSync(path.join(answers.targetFilePath), yaml, 'utf-8');
+  writeFileSync(path.join(output || answers.targetFilePath), yaml, 'utf-8');
 
-  console.log(`File saved to ${path.join(answers.targetFilePath)}`);
+  console.log(`File saved to ${path.join(output || answers.targetFilePath)}`);
 }
 
-async function createNewVaultString(templateToUse) {
+async function createNewVaultString(templateToUse, output = null) {
   const template = JSON.parse(readConfiguration()).filter(
     (c) => c.ServiceName === templateToUse,
   );
@@ -154,6 +155,7 @@ async function createNewVaultString(templateToUse) {
       name: 'targetFilePath',
       message: 'Location to save the vault',
       default: path.join(process.cwd(), 'vault.yml'),
+      when: !output,
 
       validate: (input) => {
         if (path.extname(input) === '.yml' || path.extname(input) === '.yaml') {
@@ -203,9 +205,9 @@ async function createNewVaultString(templateToUse) {
 
   const yaml = jsYaml.dump({ parameters: result }, { lineWidth: Infinity });
 
-  writeFileSync(path.join(answers.targetFilePath), yaml, 'utf-8');
+  writeFileSync(path.join(output || answers.targetFilePath), yaml, 'utf-8');
 
-  console.log(`File saved to ${path.join(answers.targetFilePath)}`);
+  console.log(`File saved to ${path.join(output || answers.targetFilePath)}`);
 }
 
 module.exports = {

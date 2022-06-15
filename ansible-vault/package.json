@@ -35,6 +35,7 @@
   "dependencies": {
     "ansible-vault": "^1.1.0",
     "inquirer": "^8.2.4",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "minimist": "^1.2.6"
   }
 }
