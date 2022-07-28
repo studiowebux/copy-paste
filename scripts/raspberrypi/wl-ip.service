@@ -1,0 +1,12 @@
+[Unit]
+Description=Send Network Information by mail
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/retrieve-ip.sh
+User=tgingras
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
