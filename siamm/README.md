@@ -98,10 +98,21 @@ export AWS_REGION=ca-central-1
 export AWS_PROFILE=default
 ```
 
-`yat-siaam --template ./users.json --update --create --cleanup`
-`yat-siaam --template ./users.json --update --accountId 012345678901`
-`yat-siaam --template ./users.json --update --assumeRole devops`
-`yat-siaam --template ./users.json --update --create --cleanup --assumeRole devops --accountId 012345678901`
+```bash
+yat-siaam --template ./users.json --update --create --cleanup
+```
+
+```bash
+yat-siaam --template ./users.json --update --accountId 012345678901
+```
+
+```bash
+yat-siaam --template ./users.json --update --assumeRole devops
+```
+
+```bash
+yat-siaam --template ./users.json --update --create --cleanup --assumeRole devops --accountId 012345678901
+```
 
 | Option       | Description                                                                               |
 | ------------ | ----------------------------------------------------------------------------------------- |
