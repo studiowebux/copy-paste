@@ -44,7 +44,8 @@
 
 ## About
 
-MermaidJS gwenerator using the organization.yml file
+MermaidJS generator using the organization.yml file.  
+The organization file must be built using the org-formation format. (https://github.com/org-formation/org-formation-cli)
 
 ### Technologies
 
@@ -73,6 +74,10 @@ npm install -g @yetanothertool/org-formation-mermaidjs
 
 `yat-org-formation-mermaidjs ./organization.yml`
 
+### Demo
+
+![Demo](./mermaidjs.png)
+
 ---
 
 ## Contributing
@@ -91,7 +96,7 @@ npm install -g @yetanothertool/org-formation-mermaidjs
 git checkout -b <feature|fix|release|chore|hotfix>/prefix-name
 ```
 
-> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name; 
+> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name;
 > Use hyphens as separator;
 > The prefix correspond to your Kanban tool id (e.g. abc-123)
 
