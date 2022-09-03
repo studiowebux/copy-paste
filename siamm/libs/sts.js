@@ -10,7 +10,11 @@ const { IAMClient } = require('@aws-sdk/client-iam');
 
 async function getIdentity(client) {
   const id = await client.send(new GetCallerIdentityCommand());
-  console.log(`|\t${id.UserId}\t|\t${id.Account}\t|\t${id.Arn}\t|`);
+  console.table({
+    UserId: id.UserId,
+    AccountId: id.Account,
+    UserArn: id.Arn,
+  });
   return id.Account;
 }
 

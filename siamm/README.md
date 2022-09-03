@@ -71,7 +71,6 @@ npm install -g @yetanothertool/siamm
 
 ```json
 [
-
   {
     "username": "provisioning",
     "policies": [
@@ -90,20 +89,28 @@ npm install -g @yetanothertool/siamm
     "groups": ["administrators"]
   }
 ]
-
 ```
 
 ### CLI
 
-`yat-siaam --template ./users.json --accountId=123456789012 --update --create --cleanup`
+```bash
+export AWS_REGION=ca-central-1
+export AWS_PROFILE=default
+```
 
-| Option      | Description                                     |
-| ----------- | ----------------------------------------------- |
-| --template  | JSON file with the user definition              |
-| --accountId | Target AWS Account thst has IAM Users           |
-| --update    | Update Managed Policies, groups and users       |
-| --create    | Create missing users                            |
-| --cleanup   | Delete users that aren't in the local JSON file |
+`yat-siaam --template ./users.json --update --create --cleanup`
+`yat-siaam --template ./users.json --update --accountId 012345678901`
+`yat-siaam --template ./users.json --update --assumeRole devops`
+`yat-siaam --template ./users.json --update --create --cleanup --assumeRole devops --accountId 012345678901`
+
+| Option       | Description                                                                               |
+| ------------ | ----------------------------------------------------------------------------------------- |
+| --template   | JSON file with the user definition                                                        |
+| --accountId  | Target AWS Account that has IAM Users (Default: The account associated with your profile) |
+| --assumeRole | Assume role in the targetted account (Default: 'OrganizationAccountAccessRole')           |
+| --update     | Update Managed Policies, groups and users                                                 |
+| --create     | Create missing users                                                                      |
+| --cleanup    | Delete users that aren't in the local JSON file                                           |
 
 ---
 
@@ -123,7 +130,7 @@ npm install -g @yetanothertool/siamm
 git checkout -b <feature|fix|release|chore|hotfix>/prefix-name
 ```
 
-> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name; 
+> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name;
 > Use hyphens as separator;
 > The prefix correspond to your Kanban tool id (e.g. abc-123)
 
