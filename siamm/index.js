@@ -16,7 +16,7 @@ const { argv } = yargs(hideBin(process.argv));
 let iam = new IAMClient();
 let sts = new STSClient();
 
-let account = argv.accountId;
+let account = argv.accountId?.toString();
 
 (async () => {
   try {
@@ -27,12 +27,15 @@ let account = argv.accountId;
       fs.readFileSync(path.resolve(template), 'utf-8'),
     );
 
-    if (argv.assumeRole || account) {
+    if (!account) {
+      account = await getIdentity(sts);
+    }
+
+    if (argv.assumeRole) {
       const clients = await assumeRole(sts, account, argv.assumeRole);
       iam = clients.iam;
       sts = clients.sts;
     }
-    account = await getIdentity(sts);
 
     // TODO: Implement recursive to get all users
     const existingUsers = await iam.send(new ListUsersCommand({}));
@@ -47,32 +50,34 @@ let account = argv.accountId;
       existingUsers.Users.some((c) => c.UserName === user.username),
     );
 
+    console.log('Users:');
+
     console.log(
       `User(s) to delete: ${
-        missingLocally.map((u) => u.UserName).join(', ') || '[None]'
+        `[${missingLocally.map((u) => u.UserName).join(', ')}]` || '[None]'
       } (${missingLocally.length})`,
     );
     console.log(
       `User(s) to add: ${
-        missingRemotely.map((u) => u.username).join(', ') || '[None]'
+        `[${missingRemotely.map((u) => u.username).join(', ')}]` || '[None]'
       } (${missingRemotely.length})`,
     );
 
     console.log(
       `User(s) to update: ${
-        synced.map((u) => u.username).join(', ') || '[None]'
+        `[${synced.map((u) => u.username).join(', ')}]` || '[None]'
       } (${synced.length})`,
     );
 
-    if (argv.create) {
-      await createUsers(iam, content, missingRemotely);
-    }
+    await createUsers(iam, content, missingRemotely, account, argv.create);
+
     if (argv.cleanup) {
       await deleteUsers(iam, missingLocally);
     }
-    if (argv.update) {
-      await updateUsers(iam, account, synced);
-    }
+
+    await updateUsers(iam, account, synced, argv.update);
+
+    console.log('\nVoila !');
 
     process.exit(0);
   } catch (e) {
