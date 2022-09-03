@@ -53,23 +53,32 @@ Collection of tools and scripts to configure, provision, create and more.
 
 - [Ansible Vault Templates](ansible-vault/) - <a href="https://badge.fury.io/js/@yetanothertool%2Fvault"><img src="https://badge.fury.io/js/@yetanothertool%2Fvault.svg" alt="npm version" height="18"></a>
   - `yat-vault {create|generate|generate-string}`
+- [Directory Parser](directory-parser/) - <a href="https://badge.fury.io/js/@yetanothertool%2Fdirectory-scanner"><img src="https://badge.fury.io/js/@yetanothertool%2Fdirectory-scanner.svg" alt="npm version" height="18"></a>
+  - `yat-dir-scanner`
 - [AWS Scripts](scripts/aws)
+  - `acm`
   - `mfa`
-  - `assume-role`
-  - `./organizationAccountAccessRole {ACCOUNT_ID} {AWS_PROFILE}`
+  - `organization`
+  - `ssm_ansible`
+  - `sts`
+  - `alias`
+  - `fetch-info-from-organization`
+  - `list-profile`
 - [Git Scripts](scripts/git)
   - `tagger`
   - `deployment`
 - [Godaddy Scripts](scripts/godaddy)
   - `update-ns`
+- [Raspberrypi Scripts](scripts/raspberrypi)
+- [SIAMM](siamm/) - <a href="https://badge.fury.io/js/@yetanothertool%2Fsiamm"><img src="https://badge.fury.io/js/@yetanothertool%2Fsiamm.svg" alt="npm version" height="18"></a>
+  - `yat-siamm {template|update|create|cleanup|accountId|assumeRole}`
 - [Templates](templates/)
   - `project`
   - `readme`
   - `lambda`
   - `service`
-- [Utils](utils/)
+- [Utils](utils/) - <a href="https://badge.fury.io/js/@yetanothertool%2Forg-formation-mermaidjs"><img src="https://badge.fury.io/js/@yetanothertool%2Forg-formation-mermaidjs.svg" alt="npm version" height="18"></a>
   - `org-formation-mermaidjs`
-
 
 ## Contributing
 
@@ -87,7 +96,7 @@ Collection of tools and scripts to configure, provision, create and more.
 git checkout -b <feature|fix|release|chore|hotfix>/prefix-name
 ```
 
-> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name; 
+> Your branch name must starts with [feature|fix|release|chore|hotfix] and use a / before the name;
 > Use hyphens as separator;
 > The prefix correspond to your Kanban tool id (e.g. abc-123)
 
