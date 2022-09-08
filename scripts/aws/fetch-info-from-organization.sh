@@ -1,8 +1,12 @@
 #!/bin/bash
 
-export AWS_PROFILE=default
-export AWS_REGION=ca-central-1
+mgmt_profile="default"
+mgmt_region="ca-central-1"
 
+export AWS_PROFILE="${mgmt_profile}"
+export AWS_REGION="${mgmt_region}"
+
+regions=("ca-central-1" "us-east-1")
 accounts=$(aws organizations list-accounts --query 'Accounts[].{Id: Id, Name: Name}')
 
 skipAccount=$(aws sts get-caller-identity --query 'Account' | tr -d '"')
@@ -26,8 +30,8 @@ assume_role(){
 }
 
 back_to_management(){
-    export AWS_PROFILE=tgingras@studiowebux-management
-    export AWS_REGION=ca-central-1
+    export AWS_PROFILE="${mgmt_profile}"
+    export AWS_REGION="${mgmt_region}"
     unset AWS_ACCESS_KEY_ID
     unset AWS_SECRET_ACCESS_KEY
     unset AWS_SESSION_TOKEN
@@ -46,17 +50,20 @@ for item in $(echo $accounts | jq -r '.[] | @base64'); do
     if [ "${skipAccount}" != "${accountId}" ]; then
         assume_role ${accountId}
 
-        ##
-        ## REPLACE THIS SECTION WITH YOUR COMMANDS
-        ##
-        aws sts get-caller-identity
-        aws route53 list-hosted-zones \
-            --query 'HostedZones[].{Name: Name, ResourceRecordSetCount: ResourceRecordSetCount}' \
-            --output json \
-            --no-paginate
-        ##
-        ## END
-        ##
+        for region in "${regions[@]}"; do
+            echo $region
+            ##
+            ## REPLACE THIS SECTION WITH YOUR COMMANDS
+            ##
+            aws sts get-caller-identity
+            aws route53 list-hosted-zones \
+                --query 'HostedZones[].{Name: Name, ResourceRecordSetCount: ResourceRecordSetCount}' \
+                --output json \
+                --no-paginate
+            ##
+            ## END
+            ##
+        done
     else
         echo "Skipped..."
     fi
