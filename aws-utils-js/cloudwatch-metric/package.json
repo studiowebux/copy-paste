@@ -1,0 +1,16 @@
+{
+  "name": "@yetanothertool/cloudwatch-metric",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Studio Webux",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch": "^3.180.0",
+    "aws-xray-sdk": "^3.3.8"
+  }
+}

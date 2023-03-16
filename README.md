@@ -79,6 +79,8 @@ Collection of tools and scripts to configure, provision, create and more.
   - `service`
 - [Utils](utils/) - <a href="https://badge.fury.io/js/@yetanothertool%2Forg-formation-mermaidjs"><img src="https://badge.fury.io/js/@yetanothertool%2Forg-formation-mermaidjs.svg" alt="npm version" height="18"></a>
   - `org-formation-mermaidjs`
+- [AWS Utils NodeJS](./aws-utils-js/)
+  - Few **tools** and **helpers** with *AWS SDK* that I use in my projects
 
 ## Contributing
 

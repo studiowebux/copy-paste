@@ -1,0 +1,12 @@
+.eslintrc*
+node_modules/
+.gitignore
+*.yaml
+*.yml
+*.sh
+*.zip
+*.toml
+.env*
+.aws-sam/
+_test/
+__tests__/
